@@ -18,6 +18,17 @@ app.get("/twoclient", (req, res) => {
     res.send(twoclient.toString())
 })
 
+app.get("/actions/rock", (req, res) => {
+
+})
+
+app.get("/actions/paper", (req, res) => {
+    
+})
+
+app.get("/actions/scissors", (req, res) => {
+    
+})
 
 app.listen(port, () => {
     console.log(chalk.yellow(`Server listening on port ${port}.`))
