@@ -12,14 +12,22 @@
     <button id="scissors" onclick="scissors()">Scissors</button>
 </body>
 <script>
+    const hideButtons = function() {
+        var rockbutton = document.getElementById("rock")
+        var paperbutton = document.getElementById("paper")
+        var scissorsbutton = document.getElementById("scissors")
+        rockbutton.style.display = "none"
+        paperbutton.style.display = "none"
+        scissorsbutton.style.display = "none"
+    }
     const rock = function() {
-
+        hideButtons()
     }
     const paper = function() {
-
+        hideButtons()
     }
     const scissors = function() {
-        
+        hideButtons()
     }
 </script>
 </html>

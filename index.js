@@ -7,12 +7,14 @@ const port = 4000;
 app.get("/oneclient", (req, res) => {
     var oneclient = fs.readFileSync("client/oneclient.html")
     // console.log(oneclient)
+    console.log("Player one connected!")
     res.send(oneclient.toString())
 })
 
 app.get("/twoclient", (req, res) => {
     var twoclient = fs.readFileSync("client/twoclient.html")
     // console.log(twoclient)
+    console.log("Player two connected!")
     res.send(twoclient.toString())
 })
 
