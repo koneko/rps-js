@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "bundle": "browserify client/client.js -o client/wrapedclient.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^16.5.2",
     "chalk": "^4.1.0",
     "express": "^4.17.1",
     "request": "^2.88.2"

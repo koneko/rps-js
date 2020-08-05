@@ -18,15 +18,27 @@ app.get("/twoclient", (req, res) => {
     res.send(twoclient.toString())
 })
 
-app.get("/actions/rock", (req, res) => {
-
+app.get("/actions/orock", (req, res) => {
+    console.log("i was accessed via request!")
 })
 
-app.get("/actions/paper", (req, res) => {
+app.get("/actions/opaper", (req, res) => {
     
 })
 
-app.get("/actions/scissors", (req, res) => {
+app.get("/actions/oscissors", (req, res) => {
+    
+})
+
+app.get("/actions/trock", (req, res) => {
+
+})
+
+app.get("/actions/tpaper", (req, res) => {
+    
+})
+
+app.get("/actions/tscissors", (req, res) => {
     
 })
 
