@@ -1,7 +1,8 @@
 const express = require("express")
 const app = express()
 const fs = require("fs")
-const chalk = require("chalk")
+const chalk = require("chalk");
+const { static } = require("express");
 const port = 4000;
 
 app.get("/oneclient", (req, res) => {
@@ -18,8 +19,15 @@ app.get("/twoclient", (req, res) => {
     res.send(twoclient.toString())
 })
 
+app.get("/client.js", (req, res) => {
+    var twoclient = fs.readFileSync("client/client.js")
+    // console.log(twoclient)
+    res.send(twoclient.toString())
+})
+
 app.get("/actions/orock", (req, res) => {
     console.log("i was accessed via request!")
+    res.send({ message: "Hello"});
 })
 
 app.get("/actions/opaper", (req, res) => {
