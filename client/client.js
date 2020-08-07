@@ -14,17 +14,29 @@ const showButtons = function() {
     paperbutton.style.display = "block"
     scissorsbutton.style.display = "block"
 }
-const rock = function() {
+const orock = function() {
     hideButtons()
     sendAction("orock")
 }
-const paper = function() {
+const opaper = function() {
     hideButtons()
     sendAction("opaper")
 }
-const scissors = function() {
+const oscissors = function() {
     hideButtons()
     sendAction("oscissors")
+}
+const trock = function() {
+    hideButtons()
+    sendAction("trock")
+}
+const tpaper = function() {
+    hideButtons()
+    sendAction("tpaper")
+}
+const tscissors = function() {
+    hideButtons()
+    sendAction("tscissors")
 }
 const sendAction = function(action) {
     if(action == "orock") {
