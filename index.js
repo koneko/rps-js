@@ -2,8 +2,18 @@ const express = require("express")
 const app = express()
 const fs = require("fs")
 const chalk = require("chalk");
-const { static } = require("express");
 const port = 4000;
+const loadState = function() {
+    var rps = JSON.parse(fs.readFileSync("rps.json").toString())
+    return rps;
+}
+const saveState = function() {
+    // var rps = loadState()
+    const dataJSON = JSON.stringify(rps)
+    fs.writeFileSync("rps.json", dataJSON)
+    // fs.writeFileSync("rps.json",)
+}
+
 
 app.get("/oneclient", (req, res) => {
     var oneclient = fs.readFileSync("client/oneclient.html")
@@ -26,28 +36,45 @@ app.get("/client.js", (req, res) => {
 })
 
 app.get("/actions/orock", (req, res) => {
-    console.log("i was accessed via request!")
-    res.send({ message: "Hello"});
+    var rps = JSON.parse(fs.readFileSync("rps.json").toString())
+    rps.playerone = "rock";
+    res.send(rps);
+    fs.writeFileSync("rps.json", JSON.stringify(rps))
 })
 
 app.get("/actions/opaper", (req, res) => {
-    
+    var rps = JSON.parse(fs.readFileSync("rps.json").toString())
+    rps.playerone = "paper";
+    res.send(rps);
+    fs.writeFileSync("rps.json", JSON.stringify(rps))
 })
 
 app.get("/actions/oscissors", (req, res) => {
-    
+    var rps = JSON.parse(fs.readFileSync("rps.json").toString())
+    rps.playerone = "scissors";
+    res.send(rps);
+    fs.writeFileSync("rps.json", JSON.stringify(rps))
 })
 
 app.get("/actions/trock", (req, res) => {
-
+    var rps = JSON.parse(fs.readFileSync("rps.json").toString())
+    rps.playertwo = "rock";
+    res.send(rps);
+    fs.writeFileSync("rps.json", JSON.stringify(rps))
 })
 
 app.get("/actions/tpaper", (req, res) => {
-    
+    var rps = JSON.parse(fs.readFileSync("rps.json").toString())
+    rps.playertwo = "paper";
+    res.send(rps);
+    fs.writeFileSync("rps.json", JSON.stringify(rps))
 })
 
 app.get("/actions/tscissors", (req, res) => {
-    
+    var rps = JSON.parse(fs.readFileSync("rps.json").toString())
+    rps.playertwo = "scissors";
+    res.send(rps);
+    fs.writeFileSync("rps.json", JSON.stringify(rps))
 })
 
 app.listen(port, () => {
