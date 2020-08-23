@@ -82,3 +82,4 @@ app.listen(port, () => {
     console.log(chalk.redBright("Player one: http://localhost:4000/oneclient"))
     console.log(chalk.blueBright("Player two: http://localhost:4000/twoclient"))
 })
+//im not working on this much anymore, ill finish it later
